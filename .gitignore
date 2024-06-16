@@ -125,17 +125,19 @@ celerybeat.pid
 .env
 .venv
 env/
-venv/
 ENV/
 env.bak/
 venv.bak/
+venv/*
+!venv/README.md
+!venv/requirements.txt
 
 # Spyder project settings
 .spyderproject
 .spyproject
 
 # Rope project settings
-.ropeproject
+.ropeprojectv
 
 # mkdocs documentation
 /site

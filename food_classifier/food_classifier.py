@@ -2,6 +2,7 @@ from os import path
 from typing import List 
 from dataclasses import dataclass
 import pathlib
+from ..util.string_util import StringUtil
 
 @dataclass
 class FoodClassificationResult:
@@ -27,17 +28,16 @@ class FoodClassifier(object):
 
         with open(filePath, "r") as f:
             items = f.readlines()
-            items = [i.upper().strip() for i in items]
+            items = StringUtil.clean_list(items)
 
         return items
 
     def classify_foods(self, listOfFoods: List[str]) -> List[FoodClassificationResult]:
-
         classifiedList = []
         
         for v in listOfFoods:
             
-            upperV = v.upper()
+            upperV = StringUtil.clean_string(v)
             isVegetable = self.is_vegetable(upperV)
             isFruit = self.is_fruit(upperV)
 

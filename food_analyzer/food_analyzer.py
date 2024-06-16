@@ -1,5 +1,6 @@
 from collections import Counter
 from typing import List, Dict
+from ..util.string_util import StringUtil
 
 class FoodAnalyzer(object):
     foods: List[str]
@@ -10,7 +11,7 @@ class FoodAnalyzer(object):
 
     def __init__(self, foods:List[str]) -> object:
 
-        self.foods = [e.upper().strip() for e in foods]
+        self.foods = StringUtil.clean_list(foods)
         self.distribution = dict(Counter(foods))
         keys = self.distribution.keys()
         self.distinctCount = len(keys)

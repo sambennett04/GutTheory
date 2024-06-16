@@ -2,7 +2,7 @@
 
 ## Summary
 
-- this is an AI enabled service that helps people manage their gut health
+- GutTheory is an AI enabled service that helps people manage their gut health
 
 ## Backend
 

@@ -17,8 +17,8 @@ app = FastAPI()
 def get_food_classifier():
     return FoodClassifier()
 
-@app.post("/classify-food")
-async def classify_food(foods: Foods, classifier: Annotated[FoodClassifier, Depends(get_food_classifier)]) -> FoodClassification:
+@app.post("/classify-foods")
+async def classify_foods(foods: Foods, classifier: Annotated[FoodClassifier, Depends(get_food_classifier)]) -> FoodClassification:
     classifiedList = classifier.classify_foods(foods.listOfFoods)
     classifiedList = [IndividualFoodClassification(name=e.name, type=e.type) for e in classifiedList]
     foodClassification = FoodClassification(classification=classifiedList)

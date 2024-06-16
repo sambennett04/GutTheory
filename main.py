@@ -12,7 +12,7 @@ app = FastAPI()
 # here: https://fastapi.tiangolo.com/advanced/settings/#creating-the-settings-only-once-with-lru_cache
 # lru cache ensures that we only instantiate a resource/dependency once 
 # when a method decorated with @lru_cache runs multiple times it will only 
-# return the value returned from the first call to the method
+# return the value that was returned from the first call to the method
 @lru_cache
 def get_food_classifier():
     return FoodClassifier()

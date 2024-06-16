@@ -1,35 +1,37 @@
-from typing import Union
-import foodClassifier
-
-from fastapi import FastAPI
-from pydantic import BaseModel #help with typing for API's, helping you define a data type held within your API
-from os import path
-
-
-class Foods(BaseModel):
-    listOfFoods: list[str]
-
-def readTxt(t):
-    f = open(t, "r")
-    items = f.readlines()
-    [i.upper() for i in items]
-    f.close()
-
-    return items
-
-
-
+from typing import Annotated
+from .food_classifier.food_classifier import FoodClassifier
+from .food_analyzer.food_analyzer import FoodAnalyzer
+from .request_models.input import Foods
+from .request_models.output import FoodClassification, IndividualFoodClassification, AnalyzeFoods
+from fastapi import Depends, FastAPI
+from functools import lru_cache
 
 app = FastAPI()
 
+# read more about LRU cache for managing dependencies 
+# here: https://fastapi.tiangolo.com/advanced/settings/#creating-the-settings-only-once-with-lru_cache
+# lru cache ensures that we only instantiate a resource/dependency once 
+# when a method decorated with @lru_cache runs multiple times it will only 
+# return the value returned from the first call to the method
+@lru_cache
+def get_food_classifier():
+    return FoodClassifier()
 
-@app.post("/vegetables/") #change to classifyFood
-async def classify_Fruit_Vegetables(foods: Foods):
-    classifiedList = foodClassifier.classify_Foods(foods.listOfFoods)
-    return {"classifiedFoods": classifiedList} #key that describes the data that is being returned from the server
+@app.post("/classify-food")
+async def classify_food(foods: Foods, classifier: Annotated[FoodClassifier, Depends(get_food_classifier)]) -> FoodClassification:
+    classifiedList = classifier.classify_foods(foods.listOfFoods)
+    classifiedList = [IndividualFoodClassification(name=e.name, type=e.type) for e in classifiedList]
+    foodClassification = FoodClassification(classification=classifiedList)
+    
+    return foodClassification
 
-@app.post("/countDistinct")
-async def count_Distinct(foods: Foods):
-    mySet = set(foods.listOfFoods) 
-    gte30 = len(mySet) >= 30
-    return {"distinctCount":len(mySet), "overUnder30":gte30}
+@app.post("/analyze-foods")
+async def analyze_foods(foods: Foods) -> AnalyzeFoods:
+    foodAnalyzer = FoodAnalyzer(foods.listOfFoods)
+    analyzeFoods = AnalyzeFoods(
+        inputLength=foodAnalyzer.inputLength, 
+        distinctCount=foodAnalyzer.distinctCount,
+        distinctCountGteThirty=foodAnalyzer.distinctCountGteThirty,
+        distribution=foodAnalyzer.distribution)
+    
+    return analyzeFoods

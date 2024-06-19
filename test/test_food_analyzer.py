@@ -1,7 +1,7 @@
 import pytest
 from os import path
 import pathlib
-from ..food_analyzer.food_analyzer import FoodAnalyzer
+from ..food_analyzer.food_analyzer import FoodAnalyzer #it has access to the field values through import
 
 class TestFoodAnalyzer:
     foods = ["beef", "beef", "apple", "pear", "carrot"]
@@ -11,7 +11,7 @@ class TestFoodAnalyzer:
         assert f.distinctCount == 4
         assert f.inputLength == 5
         assert not f.distinctCountGteThirty
-        assert f.distribution["beef"] == 2
+        assert f.distribution["beef"] == 2 
         assert f.distribution["apple"] == 1
         assert f.distribution["pear"] == 1
         assert f.distribution["carrot"] == 1

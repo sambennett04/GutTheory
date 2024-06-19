@@ -1,5 +1,7 @@
 from typing import List
 
+#class that enables list and string cleaning functionality to be used in food_analyzer and food_classifier 
+#in its own module so that, through its init file, it can be connected to the food_analyzer and food_classifier moduals and have its functionality imported into them
 class StringUtil(object):
 
     @staticmethod

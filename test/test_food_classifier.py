@@ -12,11 +12,13 @@ class TestFoodClassifier:
         items = FoodClassifier.read_text(filePath)
         assert len(items) > 0
 
-    def test_has_veggies(self):
-        assert len(self.foodClassifier._veggies)
+        #hydrating = populating something with data 
 
-    def test_has_fruits(self):
-        assert len(self.foodClassifier._fruits)
+    def test_has_veggies(self): #checking that the constuctor properly hydrates the __veggies field
+        assert len(self.foodClassifier._veggies) > 0
+
+    def test_has_fruits(self): #checking that the constuctor properly hydrates the __fruit field
+        assert len(self.foodClassifier._fruits) > 0
     
     def test_is_fruit(self):
         result = self.foodClassifier.is_fruit("apple")

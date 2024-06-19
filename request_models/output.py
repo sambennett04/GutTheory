@@ -1,6 +1,8 @@
 from typing import List, Dict
 from pydantic import BaseModel
 
+#talk to phil about output
+
 class IndividualFoodClassification(BaseModel):
     name: str
     type: str

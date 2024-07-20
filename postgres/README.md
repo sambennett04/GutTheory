@@ -42,7 +42,7 @@ PG (postgres) Admin is an ide-like database management user interface where you 
 | PGADMIN_MAIL | any email, user name to log into pg admin | phil@phil.com |
 | PGADMIN_PW | password to log into pg admin ui | coldSoup2 |
 
-3. Fill in the values you want to use for each item in your ```.env``` file. **NEVER CHECK .env FILES INTO GIT. EVER.** These files store passwords and as passwords are uploaded to you public git repo you are getting #hacked.
+3. Fill in the values you want to use for each item in your ```.env``` file. **NEVER CHECK .env FILES INTO GIT. EVER.** These files store passwords and when passwords are uploaded to your public git repo you  get #hacked and the security of your service is compromised.
 
 4. Navigate to the folder ```GutTheory/postgres```
 

@@ -1,10 +1,11 @@
 from collections import Counter
 from typing import List, Dict
 from ..util.string_util import StringUtil
+from ..food_classifier.food_classifier import FoodClassificationResult
 
 #this file calculates the distinct amount of fruits and veggies in a list and then calculates if that number is gte 30
 class FoodAnalyzer(object):
-    foods: List[str]
+    foods: List[str] # how to garuntee that this is a list full of dictionaries
     inputLength: int #what does this do
     distribution: Dict[str, int] 
     distinctCount: int
@@ -13,6 +14,9 @@ class FoodAnalyzer(object):
     def __init__(self, foods:List[str]) -> object:
 
         self.foods = StringUtil.clean_list(foods)
+        for i in foods:
+            if i.type == "neither fruit nor vegetable":
+                foods.remove(i)
         self.distribution = dict(Counter(foods)) #creates a dictionary that has a name of a fruit as a key and the number of times that fruit occurs in the foods list as a value
         keys = self.distribution.keys() #finds the number of distinct fruits/vegetables using the keys of self.distribution
         self.distinctCount = len(keys)

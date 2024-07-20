@@ -38,7 +38,7 @@ PG (postgres) Admin is an ide-like database management user interface where you 
 | -- | -- | -- |
 | POSTGRES_USER | user name to log into pg database | phil |
 | POSTGRES_PW | password to log into pg database | hotSoup1 |
-| POSTGRES_DB | the name of the initial database in your postgres deployment | mypgdb |
+| POSTGRES_DB | the name of the initial database in your postgres deployment | postgres |
 | PGADMIN_MAIL | any email, user name to log into pg admin | phil@phil.com |
 | PGADMIN_PW | password to log into pg admin ui | coldSoup2 |
 

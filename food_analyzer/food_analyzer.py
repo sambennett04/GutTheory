@@ -4,7 +4,7 @@ from ..util.string_util import StringUtil
 
 #this file calculates the distinct amount of fruits and veggies in a list and then calculates if that number is gte 30
 class FoodAnalyzer(object):
-    foods: List[str]
+    foods: List[str] # how to garuntee that this is a list full of dictionaries
     inputLength: int #what does this do
     distribution: Dict[str, int] 
     distinctCount: int

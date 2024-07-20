@@ -12,6 +12,8 @@ Postgres is generally considered the best database for read and write workloads 
 
 Our Postgres instance runs in a docker container. Docker is a service for containerizing application. 
 Containers allow you to package your software and dependencies together so they run quickly and reliably.
+-Dependencies for example: the opperating system is a dependency for Chrome
+-Having python installed is a dependency for FastAPI, the webserver Uvicorn is also a dependency for FastAPI
 Multiple containers can run on a single machine with each container running as an isolated process. 
 Containers can share the OS kernel on a single machine allowing you to host tons of light weight applications that are slimmed down a scalable.
 Read more about containers on [docker's website](https://www.docker.com/resources/what-container/)

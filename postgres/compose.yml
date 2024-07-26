@@ -9,6 +9,7 @@ services: #different containers that are going to run when we start our containe
       - POSTGRES_PASSWORD=${POSTGRES_PW}
       - POSTGRES_DB=${POSTGRES_DB} #the name of the initial database
     volumes: #We can interact with the virtual file system of our container through the volume section
+      - ./list_plantf.csv:/tmp/list_plantf.csv #mounting the csv file into the tmp volume
       - ./init.sql:/docker-entrypoint-initdb.d/init.sql #copying our local init.sql file into the container, now that their is a file in initdb.d postgres will execute it on startup
       - pgdata:/var/lib/postgresql/data #creating a section of containers file system that the database can use to store data
     restart: always # for more on restart policies see https://docs.docker.com/config/containers/start-containers-automatically/

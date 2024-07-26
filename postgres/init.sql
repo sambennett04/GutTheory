@@ -14,11 +14,16 @@ CREATE TABLE dbo.user (
 -- The type varchar(256) is a char always stored at 256 characters 
 
 CREATE TABLE dbo.plant_foods (
-  plant_id serial PRIMARY KEY, 
+  food_id serial PRIMARY KEY, 
   food_name varchar(256) NOT NULL UNIQUE,
   food_kind varchar(256) NOT NULL,
-  UNIQUE (food_name)
-)
+  UNIQUE(food_name)
+);
+
+COPY dbo.plant_foods(food_name, food_kind) 
+FROM '/tmp/list_plantf.csv' 
+DELIMITER ','
+CSV HEADER;
 
 -- TO DO: Create a table to represent data for the food classifier
 -- TO DO: Add sample data to the users table

@@ -8,28 +8,48 @@ Postgres is generally considered the best database for read and write workloads 
 1. [Awesome Compose Examples](https://github.com/docker/awesome-compose/tree/master/postgresql-pgadmin) - great place to start
 2. [Medium Article](https://medium.com/@jewelski/quickly-set-up-a-local-postgres-database-using-docker-5098052a4726) - ok material
 
-## Docker
 
-Our Postgres instance runs in a docker container. Docker is a service for containerizing application. 
-Containers allow you to package your software and dependencies together so they run quickly and reliably.
--Dependencies for example: the opperating system is a dependency for Chrome
--Having python installed is a dependency for FastAPI, the webserver Uvicorn is also a dependency for FastAPI
-Multiple containers can run on a single machine with each container running as an isolated process. 
-Containers can share the OS kernel on a single machine allowing you to host tons of light weight applications that are slimmed down a scalable.
-Read more about containers on [docker's website](https://www.docker.com/resources/what-container/)
+## Postgres Docker Build & Run
 
-## Docker Desktop
+1. Build the container
 
-Docker Desktop is a desktop application (go figure) that provides a GUI to manage containers on your local device.
-You should download docker desktop from [docker's website](https://www.docker.com/) so you can easily manage containers running on your computer.
+```sh
 
-## Docker Compose
+docker build -t guttheory-postgres
 
-We're using Docker Compose for brevity. docker Compose is an abstraction on top of docker that allows you to define multiple containers in a single file as a group of services. You can also define dependencies for different services so that container start in-order. You can read more about docker compose in the [official docs](https://docs.docker.com/compose/).
+```
 
-## PG Admin
+2. Create a file named .env from the ```.template.env``` file. Remeber to fill in the values.
 
-PG (postgres) Admin is an ide-like database management user interface where you can create different database objects like tables, databases, etc, and manage those objects. PG Admin makes developing against relational databases easier. Read more about PG Admin on the [project's site](https://www.pgadmin.org/).
+```env
+
+POSTGRES_USER=[your user]
+POSTGRES_PW=[your password]
+POSTGRES_DB=postgres
+
+```
+
+3. Run the container (environment variables sourced from .env, recommended)
+
+```sh
+
+docker run --name guttheory-postgres-container -d -p 5432:5432 --env-file ".env" guttheory-postgres 
+
+```
+
+4. Run the container (manually specify env vars, not recommended)
+
+```sh
+
+docker run --name guttheory-postgres-container -p 5432:5432 \
+-e "POSTGRES_USER=[your pg user name]" \
+-e "POSTGRES_PASSWORD=[your pg password]" \
+-e "POSTGRES_DB=postgres" \
+guttheory-postgres
+
+```
+
+**Use host.docker.internal as value for host name/address in pgdamin when connecting to database**
 
 ## Run Postgres and PG Admin
 

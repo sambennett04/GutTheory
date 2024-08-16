@@ -1,4 +1,4 @@
-from typing import Annotated
+from typing import Annotated, List
 from .food_classifier.food_classifier import FoodClassifier
 from .food_analyzer.food_analyzer import FoodAnalyzer
 from .request_models.input import Foods
@@ -95,10 +95,33 @@ async def analyze_foods(foods: Foods, logger: Annotated[Logger, Depends(get_logg
 # test endpoint for orm/database integration. this can be removed when everyone is familiar with 
 # integration new capabilities with sqlalchemy and postgres
 @app.get("/foods/{food_name}", response_model=schemas.PlantFood)
-def read_food(food_name: str, db: Session = Depends(get_db)):
-    plant_food = crud.get_food(db, food_name=food_name)
+def read_food(food_name: str, logger: Annotated[Logger, Depends(get_logger)], db: Session = Depends(get_db)):
+
+    food_name_lower = food_name.strip().lower()
+
+    logger.info(f"{read_food.__name__}: normalized food name is: {food_name_lower}")
+
+    plant_food = crud.get_food(db, food_name=food_name_lower)
     
     if plant_food is None:
         raise HTTPException(status_code=404, detail="Food not found")
     
     return plant_food
+
+@app.post("/foods", response_model=List[schemas.PlantFood])
+def read_foods(food_names: List[str], logger: Annotated[Logger, Depends(get_logger)], db: Session = Depends(get_db)):
+
+    # normalize food names to lower before passing request to database
+    # all string data in the database should be lower case
+    food_names_lower = [name.strip().lower() for name in food_names]
+
+    logger.info(f"{read_foods.__name__}: normalized foods list is: {food_names_lower}")
+
+    # fetch a list of results from the database using an IN filter
+    # so that we do not have to make multiple trips
+    plant_foods = crud.get_foods(db, food_names=food_names_lower)
+
+    if plant_foods is None:
+        raise HTTPException(status_code=404, detail="No foods found matching the input")
+    
+    return plant_foods

@@ -1,264 +1,264 @@
-food_name, food_kind
-Abiu, Fruit
-Açaí, Fruit
-Acerola, Fruit 
-Akebi, Fruit
-Ackee, Fruit 
-African Cherry Orange, Fruit
-American Mayapple, Fruit
-Apple, Fruit
-Apricot, Fruit
-Aratiles, Fruit
-Araza, Fruit
-Avocado, Fruit
-Banana, Fruit
-Bilberry, Fruit
-Blackberry, Fruit
-Blackcurrant, Fruit
-Black sapote, Fruit
-Blueberry, Fruit
-Boysenberry, Fruit
-Breadfruit, Fruit
-Buddha's hand, Fruit
-Cactus pear, Fruit
-Canistel, Fruit
-Catmon, Fruit
-Cempedak, Fruit
-Cherimoya, Fruit
-Cherry, Fruit
-Chico fruit, Fruit
-Cloudberry, Fruit
-Coco de mer, Fruit
-Coconut, Fruit 
-Crab apple, Fruit 
-Cranberry, Fruit 
-Currant, Fruit
-Damson, Fruit
-Date, Fruit
-Dragonfruit, Fruit
-Durian, Fruit
-Elderberry, Fruit
-Feijoa, Fruit
-Fig, Fruit
-Finger Lime, Fruit 
-Gac, Fruit
-Goji berry, Fruit
-Gooseberry, Fruit
-Grape, Fruit
-Raisin, Fruit
-Grapefruit, Fruit
-Grewia asiaticav, Fruit
-Guava, Fruit
-Hala fruit, Fruit
-Haws, Fruit
-Honeyberry, Fruit
-Huckleberry, Fruit
-Jabuticaba, Fruit
-Jackfruit, Fruit
-Jambul, Fruit
-Japanese plum, Fruit
-Jostaberry, Fruit
-Jujube, Fruit
-Juniper berry, Fruit
-Kaffir lime, Fruit
-Kiwano, Fruit
-Kiwifruit, Fruit
-Kumquat, Fruit
-Lanzones, Fruit
-Lemon, Fruit
-Lime, Fruit
-Loganberry, Fruit
-Longan, Fruit
-Loquat, Fruit
-Lulo, Fruit
-Lychee, Fruit
-Magellan Barberry, Fruit
-Macopa, Fruit
-Mamey apple, Fruit
-Mamey Sapote, Fruit
-Mango, Fruit
-Mangosteen, Fruit
-Marionberry, Fruit
-Medlar, Fruit
-Melon, Fruit
-Cantaloupe, Fruit
-Galia melon, Fruit
-Honeydew, Fruit
-Mouse melon, Fruit
-Muskmelon, Fruit
-Watermelon, Fruit
-Miracle fruit, Fruit
-Momordica fruit, Fruit
-Monstera deliciosa, Fruit
-Mulberry, Fruit
-Nance, Fruit
-Nectarine, Fruit
-Orange, Fruit
-Blood orange, Fruit
-Clementine, Fruit
-Mandarine, Fruit
-Tangerine, Fruit
-Papaya, Fruit
-Passionfruit, Fruit
-Pawpaw, Fruit
-Peach, Fruit
-Pear, Fruit
-Persimmon, Fruit
-Plantain, Fruit
-Plum, Fruit
-Prune, Fruit
-Pineapple, Fruit
-Pineberry, Fruit
-Plumcot, Fruit
-Pomegranate, Fruit
-Pomelo, Fruit
-Quince, Fruit
-Raspberry, Fruit
-Salmonberry, Fruit
-Rambutan, Fruit
-Redcurrant, Fruit
-Rose apple, Fruit
-Salal berry, Fruit
-Salak, Fruit
-Santol, Fruit
-Sapodilla, Fruit
-Sapote, Fruit
-Sarguelas, Fruit
-Satsuma, Fruit
-Sloe, Fruit
-Soursop, Fruit
-Star apple, Fruit
-Star fruit, Fruit
-Strawberry, Fruit
-Sugar apple, Fruit
-Suriname cherry, Fruit
-Tamarillo, Fruit
-Tamarind, Fruit
-Tangelo, Fruit
-Tayberry, Fruit
-Thimbleberry, Fruit
-Ugli fruit, Fruit
-White currant, Fruit
-White sapote, Fruit
-Ximenia, Fruit
-Yuzu, Fruit
-artichoke, Vegetable
-aubergine, Vegetable
-asparagus, Vegetable
-broccoflower, Vegetable
-broccoli, Vegetable
-brussels sprouts, Vegetable
-cabbage, Vegetable
-kohlrabi, Vegetable
-Savoy cabbage, Vegetable
-red cabbage, Vegetable
-sour cabbage, Vegetable
-cauliflower, Vegetable
-celery, Vegetable
-cichory, Vegetable
-cilantro, Vegetable
-dillettuce, Vegetable
-dilloriander, Vegetable
-eggplant, Vegetable
-endive, Vegetable
-fiddleheads, Vegetable
-frisee, Vegetable
-fennel, Vegetable
-beet greens, Vegetable
-bok choy, Vegetable
-chard, Vegetable
-collard greens, Vegetable
-kale, Vegetable
-lettuce, Vegetable
-mustard greens, Vegetable
-spinach, Vegetable
-alfalfa sprouts, Vegetable
-azuki beans, Vegetable
-bean sprouts, Vegetable
-black beans, Vegetable
-black-eyed peas, Vegetable
-borlotti bean, Vegetable
-broad beans, Vegetable
-chickpeas, Vegetable
-green beans, Vegetable
-kidney beans, Vegetable
-lentils, Vegetable
-lima beans, Vegetable
-mung beans, Vegetable
-navy beans, Vegetable
-peanuts, Vegetable
-pinto beans, Vegetable
-runner beans, Vegetable
-split peas, Vegetable
-soy beans, Vegetable
-peas, Vegetable
-mange tout, Vegetable
-mushrooms, Vegetable
-nettles, Vegetable
-New Zealand spinach, Vegetable
-oca, Vegetable
-okra, Vegetable
-onion sprouts, Vegetable
-chives, Vegetable
-garlic, Vegetable
-leek, Vegetable
-onion, Vegetable
-shallot, Vegetable
-scallion, Vegetable
-bell pepper, Vegetable
-chili pepper, Vegetable
-jalapeño, Vegetable
-habanero, Vegetable
-paprika, Vegetable
-tabasco pepper, Vegetable
-cayenne pepper, Vegetable
-radicchio, Vegetable
-rhubarb, Vegetable
-root vegetables, Vegetable
-beetroot, Vegetable
-mangelwurzel, Vegetable
-carrot, Vegetable
-celeriac, Vegetable
-corms, Vegetable
-eddoe, Vegetable
-konjac, Vegetable
-taro, Vegetable
-water chestnut, Vegetable
-ginger, Vegetable
-parsnip, Vegetable
-rutabaga, Vegetable
-radish, Vegetable
-wasabi, Vegetable
-horseradish, Vegetable
-daikon, Vegetable
-turnip, Vegetable
-tubers, Vegetable
-jicama, Vegetable
-jerusalem artichoke, Vegetable
-kumara, Vegetable
-potato, Vegetable
-sour yam, Vegetable
-sweet potato, Vegetable
-sweet yam, Vegetable
-yam, Vegetable
-salsify, Vegetable
-skirret, Vegetable
-succotash, Vegetable
-sweetcorn, Vegetable
-topinambur, Vegetable
-squashes, Vegetable
-acorn squash, Vegetable
-bitter melon, Vegetable
-butternut squash, Vegetable
-banana squash, Vegetable
-courgette, Vegetable
-cucumber, Vegetable
-delicata, Vegetable
-gem squash, Vegetable
-hubbard squash, Vegetable
-marrow, Vegetable 
-spaghetti squash, Vegetable
-tat soi, Vegetable
-tomatillo, Vegetable
-tomato, Vegetable
-watercress, Vegetable
+food_name,food_kind
+abiu,fruit
+açaí,fruit
+acerola,fruit 
+akebi,fruit
+ackee,fruit 
+african cherry orange,fruit
+american mayapple,fruit
+apple,fruit
+apricot,fruit
+aratiles,fruit
+araza,fruit
+avocado,fruit
+banana,fruit
+bilberry,fruit
+blackberry,fruit
+blackcurrant,fruit
+black sapote,fruit
+blueberry,fruit
+boysenberry,fruit
+breadfruit,fruit
+buddha's hand,fruit
+cactus pear,fruit
+canistel,fruit
+catmon,fruit
+cempedak,fruit
+cherimoya,fruit
+cherry,fruit
+chico fruit,fruit
+cloudberry,fruit
+coco de mer,fruit
+coconut,fruit 
+crab apple,fruit 
+cranberry,fruit 
+currant,fruit
+damson,fruit
+date,fruit
+dragonfruit,fruit
+durian,fruit
+elderberry,fruit
+feijoa,fruit
+fig,fruit
+finger lime,fruit 
+gac,fruit
+goji berry,fruit
+gooseberry,fruit
+grape,fruit
+raisin,fruit
+grapefruit,fruit
+grewia asiaticav,fruit
+guava,fruit
+hala fruit,fruit
+haws,fruit
+honeyberry,fruit
+huckleberry,fruit
+jabuticaba,fruit
+jackfruit,fruit
+jambul,fruit
+japanese plum,fruit
+jostaberry,fruit
+jujube,fruit
+juniper berry,fruit
+kaffir lime,fruit
+kiwano,fruit
+kiwifruit,fruit
+kumquat,fruit
+lanzones,fruit
+lemon,fruit
+lime,fruit
+loganberry,fruit
+longan,fruit
+loquat,fruit
+lulo,fruit
+lychee,fruit
+magellan barberry,fruit
+macopa,fruit
+mamey apple,fruit
+mamey sapote,fruit
+mango,fruit
+mangosteen,fruit
+marionberry,fruit
+medlar,fruit
+melon,fruit
+cantaloupe,fruit
+galia melon,fruit
+honeydew,fruit
+mouse melon,fruit
+muskmelon,fruit
+watermelon,fruit
+miracle fruit,fruit
+momordica fruit,fruit
+monstera deliciosa,fruit
+mulberry,fruit
+nance,fruit
+nectarine,fruit
+orange,fruit
+blood orange,fruit
+clementine,fruit
+mandarine,fruit
+tangerine,fruit
+papaya,fruit
+passionfruit,fruit
+pawpaw,fruit
+peach,fruit
+pear,fruit
+persimmon,fruit
+plantain,fruit
+plum,fruit
+prune,fruit
+pineapple,fruit
+pineberry,fruit
+plumcot,fruit
+pomegranate,fruit
+pomelo,fruit
+quince,fruit
+raspberry,fruit
+salmonberry,fruit
+rambutan,fruit
+redcurrant,fruit
+rose apple,fruit
+salal berry,fruit
+salak,fruit
+santol,fruit
+sapodilla,fruit
+sapote,fruit
+sarguelas,fruit
+satsuma,fruit
+sloe,fruit
+soursop,fruit
+star apple,fruit
+star fruit,fruit
+strawberry,fruit
+sugar apple,fruit
+suriname cherry,fruit
+tamarillo,fruit
+tamarind,fruit
+tangelo,fruit
+tayberry,fruit
+thimbleberry,fruit
+ugli fruit,fruit
+white currant,fruit
+white sapote,fruit
+ximenia,fruit
+yuzu,fruit
+artichoke,vegetable
+aubergine,vegetable
+asparagus,vegetable
+broccoflower,vegetable
+broccoli,vegetable
+brussels sprouts,vegetable
+cabbage,vegetable
+kohlrabi,vegetable
+savoy cabbage,vegetable
+red cabbage,vegetable
+sour cabbage,vegetable
+cauliflower,vegetable
+celery,vegetable
+cichory,vegetable
+cilantro,vegetable
+dillettuce,vegetable
+dilloriander,vegetable
+eggplant,vegetable
+endive,vegetable
+fiddleheads,vegetable
+frisee,vegetable
+fennel,vegetable
+beet greens,vegetable
+bok choy,vegetable
+chard,vegetable
+collard greens,vegetable
+kale,vegetable
+lettuce,vegetable
+mustard greens,vegetable
+spinach,vegetable
+alfalfa sprouts,vegetable
+azuki beans,vegetable
+bean sprouts,vegetable
+black beans,vegetable
+black-eyed peas,vegetable
+borlotti bean,vegetable
+broad beans,vegetable
+chickpeas,vegetable
+green beans,vegetable
+kidney beans,vegetable
+lentils,vegetable
+lima beans,vegetable
+mung beans,vegetable
+navy beans,vegetable
+peanuts,vegetable
+pinto beans,vegetable
+runner beans,vegetable
+split peas,vegetable
+soy beans,vegetable
+peas,vegetable
+mange tout,vegetable
+mushrooms,vegetable
+nettles,vegetable
+new zealand spinach,vegetable
+oca,vegetable
+okra,vegetable
+onion sprouts,vegetable
+chives,vegetable
+garlic,vegetable
+leek,vegetable
+onion,vegetable
+shallot,vegetable
+scallion,vegetable
+bell pepper,vegetable
+chili pepper,vegetable
+jalapeño,vegetable
+habanero,vegetable
+paprika,vegetable
+tabasco pepper,vegetable
+cayenne pepper,vegetable
+radicchio,vegetable
+rhubarb,vegetable
+root vegetables,vegetable
+beetroot,vegetable
+mangelwurzel,vegetable
+carrot,vegetable
+celeriac,vegetable
+corms,vegetable
+eddoe,vegetable
+konjac,vegetable
+taro,vegetable
+water chestnut,vegetable
+ginger,vegetable
+parsnip,vegetable
+rutabaga,vegetable
+radish,vegetable
+wasabi,vegetable
+horseradish,vegetable
+daikon,vegetable
+turnip,vegetable
+tubers,vegetable
+jicama,vegetable
+jerusalem artichoke,vegetable
+kumara,vegetable
+potato,vegetable
+sour yam,vegetable
+sweet potato,vegetable
+sweet yam,vegetable
+yam,vegetable
+salsify,vegetable
+skirret,vegetable
+succotash,vegetable
+sweetcorn,vegetable
+topinambur,vegetable
+squashes,vegetable
+acorn squash,vegetable
+bitter melon,vegetable
+butternut squash,vegetable
+banana squash,vegetable
+courgette,vegetable
+cucumber,vegetable
+delicata,vegetable
+gem squash,vegetable
+hubbard squash,vegetable
+marrow,vegetable 
+spaghetti squash,vegetable
+tat soi,vegetable
+tomatillo,vegetable
+tomato,vegetable
+watercress,vegetable

@@ -20,10 +20,15 @@ CREATE TABLE dbo.plant_foods (
   UNIQUE(food_name)
 );
 
+-- load seed data from csv
 COPY dbo.plant_foods(food_name, food_kind) 
 FROM '/tmp/list_plantf.csv' 
 DELIMITER ','
 CSV HEADER;
+
+-- make all entries lowercase
+UPDATE dbo.plant_foods 
+SET food_name=LOWER(food_name), food_kind=LOWER(food_kind);
 
 -- TO DO: Create a table to represent data for the food classifier
 -- TO DO: Add sample data to the users table

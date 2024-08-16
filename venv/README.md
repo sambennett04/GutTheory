@@ -7,7 +7,7 @@
 - The virtual enviorment allows you to download all relevant package installations for a project at once
 - this is useful in two ways: (1) you can distill exact lists of dependencies that were installed with ```pip install``` for your project, and (2) other developers can quickly install all the dependencies (including python version) for your project because they are being tracked.
 
-## How to use
+## How to use (if your venv is already created)
 
 1. navigate to the top-level gut theory folder:
 
@@ -26,6 +26,32 @@ source venv/bin/activate
 ```
 
 3. after activating the venv you can use pip as normal and it will install the target package to your venv instead of your machine.
+
+## How to use (if your venv is not created i.e. after clone)
+
+1. navigate to the top level gut theory folder
+
+```sh
+
+cd ./GutTheory
+
+```
+
+2. create the virtual env
+
+```sh
+
+python -m venv "venv"
+
+```
+
+3. install dependencies from requirements.txt
+
+```sh
+
+pip install -r /venv/requirements.txt
+
+```
 
 ## Other commands
 

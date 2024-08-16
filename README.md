@@ -1,4 +1,4 @@
-# Gut Theory (Backend)
+# Gut Theory
 
 ## Summary
 
@@ -6,9 +6,46 @@
 
 ## Backend
 
+### Composition
+
 - web server: fastapi ```/fastapi```
 - relational db: postgresql ```/postgres```
 - relational db mgr: pgadmin ```/pgadmin```
+
+### Run the app
+
+1. Navigate to the ```GutTheory``` folder
+
+```sh
+
+cd ./GutTheory
+
+```
+
+2. Use the file ```.template.env``` to create a ```.env``` file
+
+```sh
+
+cp ./.template.env ./.env
+
+```
+
+3. Fill in any missing environment variables in ```.env```
+
+4. Compose up with an image/container (re)build
+
+```sh
+
+docker compose up --rebuild
+
+```
+
+5. Navigate to the different components of the app
+
+|Component Name|Link|
+|--|--|
+| Swagger documentation for fast api app | [Swagger Docs](localhost:80/docs) |
+| Database management studio | [PG Admin](localhost:5050) |
 
 ## Docker
 

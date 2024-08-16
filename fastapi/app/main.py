@@ -5,14 +5,25 @@ from .request_models.input import Foods
 from .request_models.output import FoodClassification, IndividualFoodClassification, AnalyzeFoods
 from .log.log_config import LogConfig
 from .util.constants import Constants 
-from fastapi import Depends, FastAPI
+from .db.database import SessionLocal
+from .db import schemas, crud
+from fastapi import Depends, FastAPI, HTTPException
 from functools import lru_cache
 from logging.config import dictConfig
 from json import dumps
 import logging
 from logging import Logger
+from sqlalchemy.orm import Session
 
 app = FastAPI()
+
+# database session provider
+def get_db():
+    db = SessionLocal()
+    try:
+        yield db
+    finally:
+        db.close()
 
 # read more about LRU cache for managing dependencies 
 # here: https://fastapi.tiangolo.com/advanced/settings/#creating-the-settings-only-once-with-lru_cache
@@ -24,16 +35,15 @@ def get_food_classifier():
     return FoodClassifier()
 
 #above is an example of the singleton pattern, which restrcits the instantiation of a class to singular instance
-
 @lru_cache
 def get_logger():
     dictConfig(LogConfig().model_dump())
     return logging.getLogger(Constants.APP_NAME)
 
-
-@app.post("/classify-foods")#you can define structured data in the body of a post request
+#you can define structured data in the body of a post request
 #Type annotation allows you to retrieve data from the lru cache. Here fetching the instance of FoodClassifier that we are sustaining over the servers run time 
 #This is the pattern to use for the typing for fetching something from the lru cache in a fast api end point: Annotated[type of the object, Depends(name of the function that fetches the object from the lru cache)]
+@app.post("/classify-foods")
 async def classify_foods(foods: Foods, classifier: Annotated[FoodClassifier, Depends(get_food_classifier)], logger: Annotated[Logger, Depends(get_logger)]) -> FoodClassification:
     
     # log the length of the input so we can debug potential data 
@@ -81,3 +91,14 @@ async def analyze_foods(foods: Foods, logger: Annotated[Logger, Depends(get_logg
         distribution=foodAnalyzer.distribution)
     
     return analyzeFoods
+
+# test endpoint for orm/database integration. this can be removed when everyone is familiar with 
+# integration new capabilities with sqlalchemy and postgres
+@app.get("/foods/{food_name}", response_model=schemas.PlantFood)
+def read_food(food_name: str, db: Session = Depends(get_db)):
+    plant_food = crud.get_food(db, food_name=food_name)
+    
+    if plant_food is None:
+        raise HTTPException(status_code=404, detail="Food not found")
+    
+    return plant_food

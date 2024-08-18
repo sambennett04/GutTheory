@@ -1,4 +1,4 @@
-from typing import List
+from typing import Set
 from sqlalchemy.orm import Session
 from sqlalchemy import func
 # we opt to import models instead of classes directly from models
@@ -17,7 +17,7 @@ def get_food(db: Session, food_name: str):
         .filter(func.lower(models.PlantFoods.food_name) == food_name_lower) \
         .first()
 
-def get_foods(db: Session, food_names: List[str]):
+def get_foods(db: Session, food_names: Set[str]):
     
     # maybe we need to assume that input data is already cleansed by the time it gets 
     # to this part of the application. right now we perform this transformation

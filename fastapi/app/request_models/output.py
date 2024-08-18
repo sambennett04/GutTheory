@@ -1,14 +1,9 @@
-from typing import List, Dict
+from typing import Dict
 from pydantic import BaseModel
 
-#talk to phil about output
-
-class IndividualFoodClassification(BaseModel):
+class FoodClassificationResult(BaseModel):
     name: str
     type: str
-
-class FoodClassification(BaseModel):
-    classification: List[IndividualFoodClassification]
 
 class AnalyzeFoods(BaseModel):
     inputLength: int

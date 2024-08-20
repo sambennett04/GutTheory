@@ -36,7 +36,7 @@ cp ./.template.env ./.env
 
 ```sh
 
-docker compose up -d --rebuild --force-recreate
+docker compose up -d --build --force-recreate
 
 ```
 

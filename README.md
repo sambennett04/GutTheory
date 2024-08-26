@@ -4,15 +4,64 @@
 
 - GutTheory is an AI enabled service that helps people manage their gut health
 
+## Architecture
+
+```mermaid
+flowchart LR;
+
+    style Docker fill:#cdfffe,stroke:#7bfffc;
+    style Frontend fill:#fec5c5,stroke:#fc7676;
+    style Backend fill:#fec5c5,stroke:#fc7676;
+    style WebBrowser fill:#feeaca,stroke:#fed38f;
+    
+    subgraph Docker
+        subgraph Frontend
+            subgraph Nginx
+                A[React]
+            end
+        end
+
+        subgraph Backend
+            subgraph Uvicorn
+                B[FastAPI]
+            end
+
+            C[(Postgres)]
+        end
+        
+        D[PGAdmin]
+    end
+    
+    A<--"HTTP(S):80"-->B;
+    B<--"TCP:5432"-->C;
+    C<--"TCP:5432"-->D;
+
+    subgraph WebBrowser["Web Browser"]
+        User((User))
+        SWE((SWE))
+    end
+
+    SWE<--"HTTP(S):5050"-->D;
+    User<--"HTTP(S):3000"-->A;
+    User~~~SWE;
+
+```
+
+## Frontend
+
+- Built with ```javascript```
+- Local development with ```vite (js + swc)```
+- UI + web server: [react/nginx](react/README.md)
+
 ## Backend
 
-### Composition
+- Built with ```python```
+- Unit testing with ```pytest```
+- API + web server: [fastapi/uvicorn](fastapi/README.md)
+- Relational db: [postgresql](postgres/README.md)
+- Relational db mgr: pgadmin [pgadmin](pgadmin/README.md)
 
-- web server: fastapi ```/fastapi```
-- relational db: postgresql ```/postgres```
-- relational db mgr: pgadmin ```/pgadmin```
-
-### Run the app
+## Run the app
 
 1. Navigate to the ```GutTheory``` folder
 
@@ -44,8 +93,11 @@ docker compose up -d --build --force-recreate
 
 |Component Name|Link|
 |--|--|
-| Swagger documentation for fast api app | [Swagger Docs](localhost:80/docs) |
-| Database management studio | [PG Admin](localhost:5050) |
+| API | localhost:80 |
+| API Docs | localhost:80/docs |
+| DB | localhost:5432 |
+| PG Admin | localhost:5050 |
+| UI | localhost:3000 |
 
 ## Docker
 

@@ -1,13 +1,23 @@
-FROM node:current-alpine
+# adapted from https://github.com/fastapi/full-stack-fastapi-template/blob/master/frontend/Dockerfile
+# Stage 0, "build-stage", based on Node.js, to build and compile the frontend
+FROM node:20 AS build-stage
 
 WORKDIR /app
 
-COPY ./app/public/ /app/public
-COPY ./app/src/ /app/src
-COPY ./app/package.json /app/
+COPY ./app/package*.json /app/
 
-#installs all the dependencies specified in package.json
 RUN npm install
 
-#specifies the command that will be executed when starting a container from the image
-CMD ["npm", "start"]
+COPY ./app/ /app/
+
+# ARG VITE_API_URL=${VITE_API_URL}
+
+RUN npm run build
+
+# Stage 1, based on Nginx, to have only the compiled app, ready for production with Nginx
+FROM nginx:1
+
+COPY --from=build-stage /app/dist/ /usr/share/nginx/html
+
+COPY ./nginx.conf /etc/nginx/conf.d/default.conf
+COPY ./nginx-backend-not-found.conf /etc/nginx/extra-conf.d/backend-not-found.conf

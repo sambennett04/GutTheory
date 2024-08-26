@@ -6,8 +6,6 @@ services:
       - "5432:5432"
     env_file: ".env"
     #volumes: 
-      # - ./list_plantf.csv:/tmp/list_plantf.csv 
-      # - ./init.sql:/docker-entrypoint-initdb.d/init.sql 
       # - pgdata:/var/lib/postgresql/data 
     restart: always 
 
@@ -28,6 +26,16 @@ services:
       - postgres
     ports:
       - "80:80"
+    env_file: ".env"
+    restart: always
+  
+  react:
+    container_name: gt-react
+    build: ./react
+    depends_on:
+      - fastapi
+    ports:
+      - "3000:3000"
     env_file: ".env"
     restart: always
   

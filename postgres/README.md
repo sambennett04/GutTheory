@@ -15,7 +15,7 @@ Postgres is generally considered the best database for read and write workloads 
 
 ```sh
 
-docker build -t guttheory-postgres
+docker build -t guttheory-postgres .
 
 ```
 

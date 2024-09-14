@@ -5,9 +5,25 @@ services:
     ports: 
       - "5432:5432"
     env_file: ".env"
-    #volumes: 
-      # - pgdata:/var/lib/postgresql/data 
+    volumes: 
+      - pgdata:/var/lib/postgresql/data 
     restart: always 
+
+  # "11434:11434"
+  # -v ollama:/root/.ollama
+  # Ollama API
+  ollama:
+    container_name: gt-ollama
+    build: 
+      context: ./ollama 
+      args:
+        - OLLAMA_MODEL_NAME=llama3.1:8b
+    ports: 
+      - "11434:11434"
+    env_file: ".env"
+    volumes:
+      - ollama:/root/.ollama
+    restart: always
 
   pgadmin: 
     container_name: gt-pgadmin
@@ -17,6 +33,21 @@ services:
     ports:
       - "5050:80" 
     env_file: ".env"
+    restart: always
+
+  # "3001:8080"
+  # -v open-webui:/app/backend/data
+  # OpenWeb UI
+  openwebui:
+    container_name: gt-openwebui
+    build: ./openwebui
+    depends_on:
+      - ollama
+    ports:
+      - "3001:8080"
+    env_file: ".env"
+    volumes:
+      - open-webui:/app/backend/data
     restart: always
   
   fastapi:
@@ -39,5 +70,7 @@ services:
     env_file: ".env"
     restart: always
   
-# volumes: 
-#   pgdata:
+volumes: 
+   pgdata:
+   ollama:
+   open-webui:

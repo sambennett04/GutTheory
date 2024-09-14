@@ -25,16 +25,22 @@ flowchart LR;
             subgraph Uvicorn
                 B[FastAPI]
             end
+            subgraph Ollama
+                E[llama3.1:8b]
+            end
 
             C[(Postgres)]
         end
         
         D[PGAdmin]
+        F[Open WebUI]
     end
     
     A<--"HTTP(S):80"-->B;
+    B<--"HTTP(S):11434"-->E;
     B<--"TCP:5432"-->C;
     C<--"TCP:5432"-->D;
+    E<--"HTTP(S):11434"-->F;
 
     subgraph WebBrowser["Web Browser"]
         User((User))
@@ -42,6 +48,7 @@ flowchart LR;
     end
 
     SWE<--"HTTP(S):5050"-->D;
+    SWE<--"HTTP(S):3001"-->F;
     User<--"HTTP(S):3000"-->A;
     User~~~SWE;
 
@@ -60,6 +67,8 @@ flowchart LR;
 - API + web server: [fastapi/uvicorn](fastapi/README.md)
 - Relational db: [postgresql](postgres/README.md)
 - Relational db mgr: pgadmin [pgadmin](pgadmin/README.md)
+- Language model (llm): [llama3.1:8b](https://ollama.com/library/llama3.1)
+- Language model host: [ollama](https://ollama.com/)
 
 ## Run the app
 
@@ -98,6 +107,8 @@ docker compose up -d --build --force-recreate
 | DB | localhost:5432 |
 | PG Admin | localhost:5050 |
 | UI | localhost:3000 |
+| LM UI | localhost:3001 |
+| LM API | localhost:11434 |
 
 ## Docker
 

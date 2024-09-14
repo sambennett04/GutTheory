@@ -3,7 +3,7 @@
 1. Go to README file at ```GutTheory/venv/README.md``` and execute step 2 in the ```Other commands``` section. This will generate a requirements.txt file in ```GutTheory/fastapi``` with the same dependencies specified in venv.
 2. To build the docker image run the following command: 
 ```sh
-docker build -t [yourImageName]
+docker build -t [yourImageName] .
 ```
 3. To run your docker image, use:
 ```sh

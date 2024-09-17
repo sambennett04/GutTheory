@@ -3,6 +3,7 @@
 ## Summary
 
 - GutTheory is an AI enabled service that helps people manage their gut health
+- GutTheory is a cool app this is a test for JB
 
 ## Architecture
 
